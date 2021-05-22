@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(34, 40, 121);
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.accardeon {
+  position: relative;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width: 100%;
+}
+
+.accardeon:last-child {
+  border-bottom: none;
+}
+
+.accardeon_title {
+  position: relative;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(223, 53, 53);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.accardeon_title:hover {
+  color: rgb(36, 34, 34);
+}
+
+.accardeon_title::before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.accardeon_title:hover::before {
+  background-color: rgb(36, 34, 34);
+}
+
+.accardeon_title::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 2px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.accardeon.active .accardeon_title::after {
+  height: 2px;
+}
+
+.accardeon_title:hover::after {
+  background-color: rgb(36, 34, 34);
+}
+
+.accardeon_content {
+  overflow: hidden;
+  padding: 0 10px;
+  height: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(39, 73, 95);
+  transition: 0.5s;
+}
+
+.accardeon.active .accardeon_content {
+  padding: 10px;
+  height: 130px;
+}
